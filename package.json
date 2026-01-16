@@ -1,0 +1,32 @@
+{
+  "name": "hexpass",
+  "version": "1.0.0",
+  "description": "Generate cryptographically secure hexadecimal passwords and secrets",
+  "main": "index.js",
+  "bin": {
+    "hexpass": "./index.js"
+  },
+  "scripts": {
+    "test": "node index.js && node index.js 64 && node index.js --bytes 16"
+  },
+  "keywords": [
+    "password",
+    "hex",
+    "secret",
+    "crypto",
+    "generator",
+    "cli",
+    "jwt",
+    "api-key"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ]
+}
