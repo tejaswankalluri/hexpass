@@ -1,13 +1,13 @@
 {
   "name": "hexpass",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate cryptographically secure hexadecimal passwords and secrets",
   "main": "index.js",
   "bin": {
-    "hexpass": "./index.js"
+    "hexpass": "./bin/hexpass.js"
   },
   "scripts": {
-    "test": "node index.js && node index.js 64 && node index.js --bytes 16"
+    "test": "node bin/hexpass.js && node bin/hexpass.js 64 && node bin/hexpass.js --bytes 16 && node bin/hexpass.js 16 --count 2 && node bin/hexpass.js 48 --env TEST_SECRET && node bin/hexpass.js 32 --json"
   },
   "keywords": [
     "password",
@@ -25,6 +25,8 @@
     "node": ">=14.0.0"
   },
   "files": [
+    "bin/",
+    "src/",
     "index.js",
     "LICENSE",
     "README.md"
