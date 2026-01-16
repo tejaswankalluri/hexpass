@@ -7,7 +7,7 @@
     "hexpass": "./bin/hexpass.js"
   },
   "scripts": {
-    "test": "node bin/hexpass.js && node bin/hexpass.js 64 && node bin/hexpass.js --bytes 16 && node bin/hexpass.js 16 --count 2 && node bin/hexpass.js 48 --env TEST_SECRET && node bin/hexpass.js 32 --json"
+    "test": "node test.js"
   },
   "keywords": [
     "password",
