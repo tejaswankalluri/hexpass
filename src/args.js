@@ -76,6 +76,10 @@ function parseArgs(argv) {
       throw new Error(`Unknown option: ${arg}`);
     }
 
+    if (arg.startsWith("-")) {
+      throw new Error(`Unknown option: ${arg}`);
+    }
+
     if (lengthValue != null) {
       throw new Error("Multiple length values provided.");
     }

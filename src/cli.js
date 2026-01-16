@@ -2,7 +2,6 @@ const {
   DEFAULT_LENGTH,
   MAX_LENGTH,
   MAX_BYTES,
-  MAX_COUNT,
   parseArgs,
   parseCharacterLength,
   parseByteLength
@@ -53,15 +52,16 @@ function run(argv, stdout, stderr, exit) {
     }
 
     let charLength;
+    let cachedByteLength = null;
 
     if (parsed.bytes != null) {
-      const byteLength = parseByteLength(parsed.bytes);
-      if (byteLength * 2 > MAX_LENGTH) {
+      cachedByteLength = parseByteLength(parsed.bytes);
+      if (cachedByteLength * 2 > MAX_LENGTH) {
         throw new Error(
           `Byte length exceeds maximum of ${MAX_BYTES} bytes (${MAX_LENGTH} characters).`
         );
       }
-      charLength = byteLength * 2;
+      charLength = cachedByteLength * 2;
     } else if (parsed.lengthValue != null) {
       const length = parseCharacterLength(parsed.lengthValue);
       if (length > MAX_LENGTH) {
@@ -75,7 +75,7 @@ function run(argv, stdout, stderr, exit) {
     const secrets = generateSecrets(charLength, parsed.count);
 
     if (parsed.json) {
-      const bytes = bytesUsed(charLength, parsed.bytes != null ? parseByteLength(parsed.bytes) : null);
+      const bytes = bytesUsed(charLength, cachedByteLength);
       const jsonOutput = formatJson(secrets[0], charLength, bytes);
       stdout.write(jsonOutput + "\n");
     } else {
