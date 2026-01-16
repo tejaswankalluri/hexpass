@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const { spawn } = require('child_process');
 const { run } = require('./src/cli');
 
 // Test utilities
