@@ -1,10 +1,10 @@
 {
   "name": "hexpass",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate cryptographically secure hexadecimal passwords and secrets",
   "main": "index.js",
   "bin": {
-    "hexpass": "./bin/hexpass.js"
+    "hexpass": "bin/hexpass.js"
   },
   "scripts": {
     "test": "node bin/hexpass.js && node bin/hexpass.js 64 && node bin/hexpass.js --bytes 16 && node bin/hexpass.js 16 --count 2 && node bin/hexpass.js 48 --env TEST_SECRET && node bin/hexpass.js 32 --json"
@@ -19,8 +19,16 @@
     "jwt",
     "api-key"
   ],
-  "author": "",
+  "author": "Tejaswan Kalluri",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tejaswankalluri/hexpass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tejaswankalluri/hexpass/issues"
+  },
+  "homepage": "https://github.com/tejaswankalluri/hexpass#readme",
   "engines": {
     "node": ">=14.0.0"
   },
